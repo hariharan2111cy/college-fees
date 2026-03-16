@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EduConnect - Logout</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins;
+}
+
+body{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#F5F7FB;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:12px;
+text-align:center;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+width:320px;
+}
+
+.card h2{
+color:#0F3D91;
+margin-bottom:10px;
+}
+
+.card p{
+color:#666;
+margin-bottom:20px;
+}
+
+.btn{
+background:#1F6BFF;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:8px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>Logged Out</h2>
+
+<p>You have successfully logged out.</p>
+
+<button class="btn" onclick="goLogin()">Login Again</button>
+
+</div>
+
+<script>
+
+function goLogin(){
+window.location.href="login.html";
+}
+
+</script>
+
+</body>
+
+</html>

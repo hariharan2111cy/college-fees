@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EduConnect - Bus Tracking</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins;
+}
+
+body{
+background:#F5F7FB;
+display:flex;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+width:240px;
+height:100vh;
+background:linear-gradient(180deg,#0F3D91,#1F6BFF);
+color:white;
+position:fixed;
+padding:20px;
+transition:0.3s;
+}
+
+.logo{
+font-size:22px;
+font-weight:600;
+margin-bottom:30px;
+}
+
+.menu a{
+display:flex;
+align-items:center;
+gap:10px;
+text-decoration:none;
+color:white;
+padding:14px;
+border-radius:10px;
+margin-bottom:6px;
+}
+
+.menu a:hover{
+background:rgba(255,255,255,0.2);
+}
+
+.active{
+background:rgba(255,255,255,0.25);
+}
+
+/* MAIN */
+
+.main{
+margin-left:240px;
+width:100%;
+padding:20px;
+}
+
+/* HEADER */
+
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+}
+
+.search{
+background:white;
+padding:10px 15px;
+border-radius:10px;
+box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* TITLE */
+
+.title{
+font-size:22px;
+font-weight:600;
+color:#0F3D91;
+margin-bottom:20px;
+}
+
+/* BUS CARDS */
+
+.bus-cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-bottom:20px;
+}
+
+.bus-card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 6px 15px rgba(0,0,0,0.05);
+}
+
+.bus-card h3{
+color:#777;
+font-size:14px;
+}
+
+.bus-card h2{
+color:#0F3D91;
+}
+
+/* MAP */
+
+.map-card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 6px 15px rgba(0,0,0,0.05);
+margin-bottom:20px;
+}
+
+.map{
+height:300px;
+background:#ddd;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:10px;
+color:#666;
+}
+
+/* TABLE */
+
+.table-card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 6px 15px rgba(0,0,0,0.05);
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+padding:12px;
+border-bottom:1px solid #eee;
+text-align:left;
+}
+
+th{
+color:#666;
+font-size:14px;
+}
+
+/* STATUS */
+
+.active-bus{
+color:green;
+font-weight:600;
+}
+
+.inactive{
+color:red;
+font-weight:600;
+}
+
+/* MOBILE */
+
+.hamburger{
+display:none;
+font-size:20px;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+
+.sidebar{
+     background: #1F6BFF;
+left:-240px;
+}
+
+.sidebar.active{
+left:0;
+}
+
+.main{
+margin-left:0;
+}
+
+.hamburger{
+display:block;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar" id="sidebar">
+
+<div class="logo">EduConnect</div>
+
+<div class="menu">
+
+<a href="dashboard.html"><i class="fa fa-home"></i>Dashboard</a>
+
+<a href="students.html"><i class="fa fa-user-graduate"></i>Students</a>
+
+<a href="teachers.html"><i class="fa fa-chalkboard-teacher"></i>Teachers</a>
+
+<a href="attendance.html"><i class="fa fa-calendar-check"></i>Attendance</a>
+
+<a href="homework.html"><i class="fa fa-book"></i>Homework</a>
+
+<a href="exams.html"><i class="fa fa-file-alt"></i>Exams & Marks</a>
+
+<a href="fees.html"><i class="fa fa-wallet"></i>Fees</a>
+
+<a class="active" href="bus.html"><i class="fa fa-bus"></i>Bus Tracking</a>
+
+<a href="notifications.html"><i class="fa fa-bell"></i>Notifications</a>
+
+<a href="settings.html"><i class="fa fa-cog"></i>Settings</a>
+
+</div>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="main">
+
+<div class="header">
+
+<i class="fa fa-bars hamburger" onclick="toggleMenu()"></i>
+
+<div class="search">
+<input type="text" placeholder="Search bus..." style="border:none;outline:none">
+</div>
+
+</div>
+
+<div class="title">
+School Bus Tracking
+</div>
+
+<!-- BUS SUMMARY -->
+
+<div class="bus-cards">
+
+<div class="bus-card">
+<h3>Total Buses</h3>
+<h2>12</h2>
+</div>
+
+<div class="bus-card">
+<h3>Active Buses</h3>
+<h2>10</h2>
+</div>
+
+<div class="bus-card">
+<h3>Routes Covered</h3>
+<h2>8</h2>
+</div>
+
+<div class="bus-card">
+<h3>Students Transported</h3>
+<h2>620</h2>
+</div>
+
+</div>
+
+<!-- MAP -->
+
+<div class="map-card">
+
+<h3>Live Bus Location</h3>
+
+<div class="map">
+Live GPS Map (Integration Area)
+</div>
+
+</div>
+
+<!-- BUS TABLE -->
+
+<div class="table-card">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Bus No</th>
+<th>Driver</th>
+<th>Route</th>
+<th>Status</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>BUS-01</td>
+<td>Ramesh</td>
+<td>City Center</td>
+<td class="active-bus">Active</td>
+</tr>
+
+<tr>
+<td>BUS-02</td>
+<td>Suresh</td>
+<td>North Area</td>
+<td class="active-bus">Active</td>
+</tr>
+
+<tr>
+<td>BUS-03</td>
+<td>Manoj</td>
+<td>South Area</td>
+<td class="inactive">Inactive</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<script>
+
+function toggleMenu(){
+document.getElementById("sidebar").classList.toggle("active");
+}
+
+</script>
+
+</body>
+
+</html>
